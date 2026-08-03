@@ -1,49 +1,66 @@
 # 🌍 LinguaPulse AI – AI-Powered Language Translator
 
-An AI-powered Language Translator built using **Flask**, **JavaScript**, and **Google Translate (deep-translator)**. It provides fast, accurate translations across 100+ languages with a modern glassmorphism interface and advanced accessibility features.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Backend-Flask-black.svg)](https://flask.palletsprojects.com/)
+[![Frontend](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-orange.svg)]()
+
+A modern AI-powered Language Translator built with **Flask**, **Vanilla JavaScript**, and **deep-translator (Google Translator)**. The application translates text across 100+ languages and includes advanced features like speech recognition, text-to-speech, translation history, favorite language pairs, and a beautiful glassmorphism UI.
 
 ---
 
-## 📌 Features
+# ✨ Features
 
-- 🌍 Translate text between 100+ languages
-- 🤖 Auto Language Detection
+- 🌍 Translate between 100+ languages
+- 🤖 Automatic Language Detection
 - 🔄 Swap Source & Target Languages
 - 🎤 Speech-to-Text (Voice Input)
 - 🔊 Text-to-Speech
 - ⭐ Favorite Language Pairs
-- 📜 Translation History (Local Storage)
+- 📜 Translation History
 - 📋 Copy Translation
 - ⌨️ Keyboard Shortcut (Ctrl + Enter)
-- ⚡ Fast Flask REST API
-- 📱 Responsive Modern UI
+- ⚡ Flask REST API Backend
+- 📱 Responsive Glassmorphism UI
 - ♿ Accessibility Support
 
 ---
 
-## 🖼️ Screenshots
+# 🖼️ Application Screenshots
 
-### Home Page
+## 🏠 Home Screen
 
 ![Home](screenshots/home.png)
 
 ---
 
-### Translation Example
+## 🌍 Successful Translation
 
-![Translation](screenshots/translation.png)
-
----
-
-### Translation History & Favorites
-
-![Features](screenshots/features.png)
+![Translation](screenshots/succesfultransaction.png)
 
 ---
 
-## 🏗️ Project Structure
+## ⭐ Favorite Language Pairs
 
-```
+![Favorites](screenshots/favourite.png)
+
+---
+
+## 🌐 Language Selection
+
+![Languages](screenshots/languageslist.png)
+
+---
+
+## 📜 Translation History
+
+![History](screenshots/translationhistory.png)
+
+---
+
+# 📁 Project Structure
+
+```text
 CodeAlpha_Language_Translator/
 │
 ├── backend/
@@ -66,44 +83,68 @@ CodeAlpha_Language_Translator/
 ├── docs/
 ├── README.md
 ├── LICENSE
+├── .gitignore
 └── run.py
 ```
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Tech Stack
 
 ### Frontend
+
 - HTML5
 - CSS3
 - JavaScript (ES6)
 - Glassmorphism UI
 
 ### Backend
+
 - Python
 - Flask
 - Flask-CORS
 - deep-translator
 
-### APIs
-- Google Translate (via deep-translator)
+### APIs & Libraries
+
+- Google Translate (deep-translator)
 - Web Speech API
 - SpeechSynthesis API
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/CodeAlpha_Language_Translator.git
+git clone https://github.com/sanjanabhat846/CodeAlpha_Language_Translator.git
 ```
 
-Move into project
+Move into the project folder
 
 ```bash
 cd CodeAlpha_Language_Translator
+```
+
+Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate virtual environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
 ```
 
 Install dependencies
@@ -112,20 +153,30 @@ Install dependencies
 pip install -r backend/requirements.txt
 ```
 
-Start Backend
+---
+
+# ▶️ Run the Application
+
+Start the Flask Backend
 
 ```bash
 python -m backend.app
 ```
 
-Open Frontend
+The backend runs at:
+
+```
+http://127.0.0.1:5000
+```
+
+Serve the Frontend
 
 ```bash
 cd frontend
 python -m http.server 5500
 ```
 
-Visit
+Open your browser:
 
 ```
 http://127.0.0.1:5500
@@ -133,94 +184,74 @@ http://127.0.0.1:5500
 
 ---
 
-## 📡 API Endpoints
+# 📡 API Endpoints
 
-### Home
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/` | API Home |
+| GET | `/health` | Health Check |
+| GET | `/languages` | Supported Languages |
+| POST | `/translate` | Translate Text |
 
-```
-GET /
-```
-
----
-
-### Health
-
-```
-GET /health
-```
-
----
-
-### Translate
-
-```
-POST /translate
-```
-
-Example Request
+### Sample Request
 
 ```json
 {
-    "text":"Hello",
-    "source":"en",
-    "target":"fr"
+    "text": "Hello",
+    "source": "en",
+    "target": "fr"
 }
 ```
 
-Example Response
+### Sample Response
 
 ```json
 {
-    "translated_text":"Bonjour"
+    "translated_text": "Bonjour"
 }
 ```
 
 ---
 
-### Supported Languages
+# 🎯 Future Enhancements
 
-```
-GET /languages
-```
-
----
-
-## 🎯 Future Improvements
-
-- AI-powered context-aware translation
-- OCR image translation
-- PDF translation
-- User authentication
-- Translation export
-- Cloud deployment
+- 📄 PDF Translation
+- 🖼️ OCR Image Translation
+- 📂 Translation Export
+- ☁️ Cloud Deployment
+- 👤 User Authentication
+- 🌐 AI Context-Aware Translation
 
 ---
 
-## 📹 Demo
-
-A demonstration video is included as part of the CodeAlpha AI Internship submission.
-
----
-
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Sanjana Jairam Bhat**
 
-GitHub:
+- 🎓 AIML Engineering Student
+- 💻 Passionate about AI, Machine Learning & Full Stack Development
+
+**GitHub**
+
 https://github.com/sanjanabhat846
 
 ---
 
-## 📄 License
+# 📜 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
-## 🙏 Acknowledgements
+# 🙏 Acknowledgements
 
 - CodeAlpha AI Internship
 - Flask
 - Google Translate
 - deep-translator
 - Web Speech API
+- Font Awesome
+
+---
+
+⭐ If you found this project useful, consider giving it a **star** on GitHub!
