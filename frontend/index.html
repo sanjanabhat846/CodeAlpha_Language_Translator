@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-Powered Glassmorphism Language Translator Application Interface">
+    <title>LinguaPulse AI | Next-Gen Language Translator</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Glassmorphism Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background Glow Elements -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <div id="app" class="app-container">
+        <!-- Navigation Header -->
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>LinguaPulse <span class="gradient-text">AI</span></h1>
+                    <span class="version-tag"><i class="fa-solid fa-sparkles"></i> AI Powered</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="#features" class="nav-link"><i class="fa-solid fa-circle-info"></i> Features</a>
+                <button class="theme-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Glassmorphism v1.0</button>
+            </div>
+        </header>
+
+        <!-- Main Translator Card Section -->
+        <main class="main-content">
+            <!-- Hero Banner -->
+            <section class="hero-section">
+                <h2 class="hero-title">Break Language Barriers <span class="gradient-text">Instantly</span></h2>
+                <p class="hero-subtitle">Translate text effortlessly across 100+ languages with high accuracy and sleek real-time experience.</p>
+            </section>
+
+            <!-- Translator Interface Card -->
+            <div class="translator-card">
+                <!-- Favorites Quick Selector Bar -->
+                <div id="favorites-bar" class="favorites-bar" aria-label="Favorite Languages">
+                    <span class="favorites-label"><i class="fa-solid fa-star"></i> Pinned:</span>
+                    <div id="favorites-list" class="favorites-list">
+                        <!-- Dynamic favorite language chips will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Top Toolbar: Language Selection & Swap -->
+                <div class="toolbar">
+                    <div class="lang-selector-group">
+                        <label for="source-lang" class="sr-only">Source Language</label>
+                        <div class="select-wrapper">
+                            <i class="fa-solid fa-earth-americas select-icon" aria-hidden="true"></i>
+                            <select id="source-lang" class="custom-select" aria-label="Select Source Language">
+                                <option value="auto" selected>Detect Language (Auto)</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish (Español)</option>
+                                <option value="fr">French (Français)</option>
+                                <option value="de">German (Deutsch)</option>
+                                <option value="zh">Chinese (中文)</option>
+                                <option value="ja">Japanese (日本語)</option>
+                                <option value="ko">Korean (한국어)</option>
+                                <option value="ar">Arabic (العربية)</option>
+                                <option value="hi">Hindi (हिन्दी)</option>
+                                <option value="pt">Portuguese (Português)</option>
+                                <option value="ru">Russian (Русский)</option>
+                                <option value="it">Italian (Italiano)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <!-- Swap & Pin Buttons -->
+                    <div class="toolbar-center">
+                        <button id="swap-btn" class="swap-btn" title="Swap Source and Target Languages" aria-label="Swap Source and Target Languages">
+                            <i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i>
+                        </button>
+                        <button id="favorite-btn" class="favorite-btn" title="Pin current language pair to favorites" aria-label="Pin favorite language pair">
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="lang-selector-group">
+                        <label for="target-lang" class="sr-only">Target Language</label>
+                        <div class="select-wrapper">
+                            <i class="fa-solid fa-globe select-icon" aria-hidden="true"></i>
+                            <select id="target-lang" class="custom-select" aria-label="Select Target Language">
+                                <option value="es" selected>Spanish (Español)</option>
+                                <option value="en">English</option>
+                                <option value="fr">French (Français)</option>
+                                <option value="de">German (Deutsch)</option>
+                                <option value="zh">Chinese (中文)</option>
+                                <option value="ja">Japanese (日本語)</option>
+                                <option value="ko">Korean (한국어)</option>
+                                <option value="ar">Arabic (العربية)</option>
+                                <option value="hi">Hindi (हिन्दी)</option>
+                                <option value="pt">Portuguese (Português)</option>
+                                <option value="ru">Russian (Русский)</option>
+                                <option value="it">Italian (Italiano)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Boxes Grid Container -->
+                <div class="panels-grid">
+                    <!-- Source Text Input Panel -->
+                    <div class="panel source-panel">
+                        <div class="panel-header">
+                            <span class="panel-label"><i class="fa-regular fa-pen-to-square" aria-hidden="true"></i> Input Text</span>
+                            <button id="clear-btn" class="icon-btn-text" title="Clear text" aria-label="Clear source text">
+                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i> Clear
+                            </button>
+                        </div>
+                        <div class="textarea-wrapper">
+                            <textarea id="source-text" maxlength="5000" placeholder="Type, paste, or speak text to translate..." spellcheck="false" aria-label="Source text to translate"></textarea>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="action-buttons-left">
+                                <button id="listen-source-btn" class="tool-btn" title="Listen to input text (Text-to-Speech)" aria-label="Listen to input text">
+                                    <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                                </button>
+                                <button id="voice-input-btn" class="tool-btn" title="Voice Input (Speech-to-Text)" aria-label="Voice input speech to text">
+                                    <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="char-counter" aria-live="polite">
+                                <span id="char-count">0</span> / 5000
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target Text Output Panel -->
+                    <div class="panel target-panel">
+                        <div class="panel-header">
+                            <span class="panel-label"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Translation Output</span>
+                            <div class="output-status-badge" aria-live="polite">
+                                <span class="status-dot"></span> Ready
+                            </div>
+                        </div>
+                        <div class="textarea-wrapper">
+                            <textarea id="target-text" readonly placeholder="Translation preview will appear here..." spellcheck="false" aria-label="Translation output" aria-live="polite"></textarea>
+                            
+                            <!-- Enhanced Loading Animation Overlay -->
+                            <div id="loading-overlay" class="loading-overlay hidden" aria-live="assertive">
+                                <div class="spinner-container">
+                                    <div class="spinner"></div>
+                                    <div class="spinner-inner"></div>
+                                </div>
+                                <span class="loading-text">Translating with AI...</span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="action-buttons-left">
+                                <button id="listen-target-btn" class="tool-btn" title="Listen to translation (Text-to-Speech)" aria-label="Listen to translation">
+                                    <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <button id="copy-btn" class="copy-btn" title="Copy Translation" aria-label="Copy translated text to clipboard">
+                                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                                <span class="btn-text">Copy</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Section (Translate Button & Shortcut Hint) -->
+                <div class="action-section">
+                    <button id="translate-btn" class="translate-btn" aria-label="Translate text now">
+                        <span class="btn-content">
+                            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                            <span>Translate Now</span>
+                            <span class="kbd-hint"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></span>
+                        </span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Collapsible Translation History Section -->
+            <section id="history-section" class="history-section">
+                <div class="history-header">
+                    <button id="history-toggle-btn" class="history-toggle-btn" aria-expanded="false" aria-controls="history-content">
+                        <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+                        <span>Recent Translation History (Last 10)</span>
+                        <i class="fa-solid fa-chevron-down toggle-icon" aria-hidden="true"></i>
+                    </button>
+                    <button id="clear-history-btn" class="clear-history-btn hidden" title="Clear all history" aria-label="Clear translation history">
+                        <i class="fa-solid fa-trash-can" aria-hidden="true"></i> Clear History
+                    </button>
+                </div>
+                <div id="history-content" class="history-content hidden">
+                    <div id="history-list" class="history-list">
+                        <!-- Dynamic history items rendered via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Showcase Grid -->
+            <section id="features" class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h3>Ultra-Fast REST API</h3>
+                    <p>Powered by asynchronous Flask backend services for instantaneous response times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Deep AI Translation</h3>
+                    <p>Leverages robust neural translation models for contextual and natural phrasing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <h3>100+ Supported Languages</h3>
+                    <p>Comprehensive global language support with automatic dialect and language detection.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <p>© 2026 CodeAlpha Language Translator • Clean Scalable Architecture</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- Application Script -->
+    <script src="script.js"></script>
+</body>
+</html>
